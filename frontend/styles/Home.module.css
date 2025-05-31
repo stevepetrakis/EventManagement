@@ -1,0 +1,790 @@
+.container {
+  min-height: 100vh;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  background: white;
+}
+
+
+.topNav {
+  height: 50px;
+  background-color: #492dd1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.navContent {
+  display: flex;
+  align-items: center;
+  color: black;
+}
+
+.topNav h1 {
+  margin: 0;
+  font-size: 28px;
+  color: white;
+}
+
+.navController {
+  width: 60px;
+  height: 40px;
+  margin-right: 30px;
+}
+
+.navFilters {
+  width: 30px;
+  height: 40px;
+  margin-left: 200px;
+}
+
+.navLinks {
+  display: flex;
+  gap: 30px;
+  margin-left: 40px;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.navLinks .homeLink {
+  color: #a95dff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.navSearch {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.navSearch input {
+  width: 200px;
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: none;
+  font-size: 16px;
+}
+
+.navIcons {
+  display: flex;
+  gap: 50px;
+  margin-left: 380px;
+}
+
+.navIcon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.profileContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.profileDropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 220px;
+  z-index: 1000;
+  margin-top: 5px;
+}
+
+.dropdownHeader {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  background-color: #f8f9fa;
+  border-radius: 8px 8px 0 0;
+}
+
+.dropdownProfilePic {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.dropdownHeader span {
+  font-weight: bold;
+  color: #333;
+  font-size: 14px;
+}
+
+.dropdownItem {
+  padding: 10px 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #333;
+  transition: background-color 0.2s ease;
+}
+
+.dropdownItem:hover {
+  background-color: #f5f5f5;
+}
+
+.dropdownItem:last-child {
+  border-radius: 0 0 8px 8px;
+}
+
+.dropdownDivider {
+  margin: 0;
+  border: none;
+  border-top: 1px solid #eee;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #492dd1;
+}
+
+input:checked + .slider:before {
+  transform: translateX(14px);
+}
+
+.logoutButton {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-left: 20px;
+}
+
+.logoutButton:hover {
+  background-color: #c82333;
+}
+
+.eventContainer {
+  min-height: 100vh;
+  background: #f5f7fa;
+  padding-top: 70px; 
+}
+
+.eventContent {
+  display: flex;
+  margin-top: 20px;
+  gap: 5px;
+}
+
+.leftSidebar {
+  width: 300px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow-y: auto;
+  height: fit-content;
+  max-height: 600px;
+}
+
+.sidebarTitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #492dd1;
+  padding-bottom: 8px;
+}
+
+.teamSection {
+  margin-bottom: 25px;
+}
+
+.teamHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #492dd1;
+  color: white;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.teamName {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.teamCountry {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.teamRank {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.playersList {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.playerItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  margin-bottom: 5px;
+  background: white;
+  border-radius: 6px;
+  border-left: 3px solid #492dd1;
+}
+
+.playerName {
+  font-weight: 500;
+  color: #333;
+}
+
+.playerNickname {
+  font-size: 12px;
+  color: #666;
+  font-style: italic;
+}
+
+.playerAge {
+  background: #e9ecef;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 11px;
+  color: #666;
+}
+
+.centerContent {
+  flex: 1;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  overflow-y: auto;
+  height: fit-content;
+  max-height: 600px;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.eventImage {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.imageControls {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  display: flex;
+  gap: 10px;
+  background: rgba(91, 91, 91, 0.6);
+  padding: 8px 12px;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+}
+
+.controlEmoji {
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.controlEmoji:hover {
+  transform: scale(1.2);
+  filter: brightness(1.3);
+}
+
+.eventHeader {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.eventTitle {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.eventSubtitle {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.eventMeta {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.metaItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  min-width: 120px;
+}
+
+.metaLabel {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.metaValue {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.statusBadge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.statusLive {
+  background: #ff4757;
+  color: white;
+  animation: pulse 1.5s infinite;
+}
+
+.statusUpcoming {
+  background: #ffa502;
+  color: white;
+}
+
+.statusFinished {
+  background: #747d8c;
+  color: white;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+.priceTag {
+  background: #2ed573;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.freeTag {
+  background: #5352ed;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.eventDescription {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  border-left: 4px solid #492dd1;
+}
+
+.descriptionTitle {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.descriptionText {
+  color: #666;
+  line-height: 1.6;
+}
+
+.eventStats {
+  display: flex;
+  justify-content: space-around;
+  background: #492dd1;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.statItem {
+  text-align: center;
+}
+
+.statNumber {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.statLabel {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.rightSidebar {
+  width: 300px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+}
+
+.chatHeader {
+  background: #492dd1;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 12px 12px 0 0;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.chatMessages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  max-height: 600px;
+}
+
+.chatMessage {
+  margin-bottom: 15px;
+  padding: 10px 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 3px solid #492dd1;
+}
+
+.chatUsername {
+  font-weight: bold;
+  color: #492dd1;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+.chatText {
+  color: #333;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.chatTime {
+  font-size: 11px;
+  color: #999;
+  margin-top: 5px;
+}
+
+.chatInput {
+  padding: 15px;
+  border-top: 1px solid #eee;
+  border-radius: 0 0 12px 12px;
+}
+
+.chatInputField {
+  width: 100%;
+  padding: 10px 15px;
+  border: 2px solid #eee;
+  border-radius: 20px;
+  outline: none;
+  font-size: 14px;
+}
+
+.chatInputField:focus {
+  border-color: #492dd1;
+}
+
+.chatSendButton {
+  background: #492dd1;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+}
+
+.chatSendButton:hover {
+  background: #3a1fa8;
+}
+
+.loadingSpinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 18px;
+  color: #666;
+}
+
+.errorMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 18px;
+  color: #ff4757;
+  background: #fff5f5;
+  border-radius: 8px;
+  margin: 20px;
+}
+
+.noData {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+  padding: 20px;
+}
+
+.content_title{
+  text-align: left;
+  color: #a95dff;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.userContentSection {
+  width: 100%;
+  padding: 0 20px;
+  margin-top: 20px;
+}
+
+.contentCarousel {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 10px 0;
+  scrollbar-width: thin;
+  scrollbar-color: #492dd1 #f1f1f1;
+}
+
+.contentCarousel::-webkit-scrollbar {
+  height: 8px;
+}
+
+.contentCarousel::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.contentCarousel::-webkit-scrollbar-thumb {
+  background: #492dd1;
+  border-radius: 4px;
+}
+
+.contentCard {
+  flex: 0 0 280px;
+  height: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.contentCard:hover {
+  transform: scale(1.02);
+}
+
+.contentImage {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.contentImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contentOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 20px 15px 15px;
+  color: white;
+}
+
+.contentCreator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.creatorAvatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.creatorName {
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+}
+
+.contentDescription {
+  font-size: 13px;
+  line-height: 1.4;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-clamp: 2;
+}
+
+.addContentCard {
+  flex: 0 0 280px;
+  height: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.addContentCard:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(108, 92, 231, 0.3);
+}
+
+.addContentButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-align: center;
+}
+
+.addContentIcon {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.addContentText {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.noContentMessage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-style: italic;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.noContentMessage p {
+  margin: 0;
+  font-size: 16px;
+}
